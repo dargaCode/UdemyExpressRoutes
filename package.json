@@ -1,0 +1,19 @@
+{
+  "name": "express-routes-test",
+  "version": "1.0.0",
+  "description": "Testing HTTP Routes and Route Parameters in Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dargaCode/UdemyExpressRoutesTest.git"
+  },
+  "author": "DargaCode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dargaCode/UdemyExpressRoutesTest/issues"
+  },
+  "homepage": "https://github.com/dargaCode/UdemyExpressRoutesTest#readme"
+}

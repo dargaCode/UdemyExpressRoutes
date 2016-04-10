@@ -22,6 +22,7 @@ const ANIMALS = {
   Bird: "Caw!",
   Cat: "Meow!",
   Chicken: "b'GAWK!",
+  Cow: "Moooo!",
   Darga: "Flomp!",
   Dog: "Bark!",
   Elephant: "pfhlaROOOOGH!",
@@ -29,7 +30,9 @@ const ANIMALS = {
   Giraffe: "ooh-WAH! ooooh-WAHHHH!",
   Horse: "eeEEEEEhehehehehe!",
   Loren: "Burp!",
-  Mouse: "Squeak!"
+  Mouse: "Squeak!",
+  Pig: "Oink!",
+  Sheep: "BaAaAaAa!"
 }
 
 // SERVER

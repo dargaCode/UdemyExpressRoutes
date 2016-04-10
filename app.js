@@ -61,6 +61,10 @@ app.get("/repeat/:word/:num", function(request, response) {
   response.send(result);
 });
 
+app.get("*", function(request, response) {
+  response.sendFile(INDEX_PATH);
+});
+
 // FUNCTIONS
 
 String.prototype.capitalize = function() {

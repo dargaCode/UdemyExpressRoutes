@@ -27,6 +27,7 @@ const ANIMALS = {
   Dog: "Bark!",
   Elephant: "pfhlaROOOOGH!",
   Egret: "mmWAAhhh!",
+  Fish: "Bloop!",
   Giraffe: "ooh-WAH! ooooh-WAHHHH!",
   Horse: "eeEEEEEhehehehehe!",
   Loren: "Burp!",

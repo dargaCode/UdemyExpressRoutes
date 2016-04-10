@@ -4,6 +4,10 @@
 const express = require("express");
 const app = express();
 
+// PATHS
+
+app.use(express.static('public')); //serve static files
+
 // CONSTANTS
 
 const PORT_NUM = 3000;
@@ -18,5 +22,5 @@ app.listen(PORT_NUM, function() {
 // ROUTES
 
 app.get("/", function(request, response) {
-  response.send("hello world!");
+  response.sendFile("/index.html");
 });

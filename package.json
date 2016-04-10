@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dargaCode/UdemyExpressRoutesTest/issues"
   },
-  "homepage": "https://github.com/dargaCode/UdemyExpressRoutesTest#readme"
+  "homepage": "https://github.com/dargaCode/UdemyExpressRoutesTest#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }

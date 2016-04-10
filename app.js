@@ -38,7 +38,7 @@ const ANIMALS = {
 
 // SERVER
 
-app.listen(process.env.port || PORT_NUM, function() {
+app.listen(process.env.PORT || PORT_NUM, function() {
   console.log(SERVER_START_MSG);
 });
 

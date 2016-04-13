@@ -15,7 +15,7 @@ app.use(express.static('public')); //serve static files
 
 const PORT_NUM = 3000;
 const SERVER_START_MSG = "Serving Express Routes Test on port " + PORT_NUM;
-const INDEX_PATH = path.join(__dirname, "/public/index.html");
+const INDEX_PATH = path.join(__dirname, "/public/build/index.min.html");
 
 const ANIMALS = {
   Bear: "Rawr!",

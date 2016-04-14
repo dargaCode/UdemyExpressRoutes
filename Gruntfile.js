@@ -36,19 +36,42 @@ module.exports = function(grunt) {
           'public/build/index.min.html': 'public/index.html',
         }
       }
-    }
+    },
+
+    jshint: {
+      src: ["app.js", "Gruntfile.js"],
+      options: {
+        reporter: require('jshint-stylish')
+      }
+    },
+
+    watch: {
+      js: {
+        files: ['Gruntfile', 'app.js'],
+        tasks: ['jshint'],
+      },
+      css: {
+        files: ['public/*.css'],
+        tasks: ['csslint','cssmin'],
+      },
+      html: {
+        files: ['public/*.html'],
+        tasks: ['htmllint', 'htmlmin'],
+      },
+    },
 
   });
 
   // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-csslint");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-htmllint");
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
-
+  grunt.loadNpmTasks("grunt-contrib-jshint");
 
   // Default task(s).
-  grunt.registerTask("all", ["csslint", "cssmin", "htmllint", "htmlmin"]);
-  grunt.registerTask("default", "all");
+  grunt.registerTask("all", ["csslint", "cssmin", "htmllint", "htmlmin", "jshint"]);
+  grunt.registerTask("default", ["all", "watch"]);
 
-}
+};

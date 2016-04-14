@@ -10,10 +10,10 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'public',
-          src: ['*.css', '!*.min.css'],
-          dest: 'public/build',
-          ext: '.min.css'
+          cwd: "public",
+          src: ["*.css", "!*.min.css"],
+          dest: "public/build",
+          ext: ".min.css"
         }]
       }
     },
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'public/build/index.min.html': 'public/index.html',
+          "public/build/index.min.html": "public/index.html",
         }
       }
     },
@@ -41,22 +41,22 @@ module.exports = function(grunt) {
     jshint: {
       src: ["app.js", "Gruntfile.js"],
       options: {
-        reporter: require('jshint-stylish')
+        reporter: require("jshint-stylish")
       }
     },
 
     watch: {
       js: {
-        files: ['Gruntfile', 'app.js'],
-        tasks: ['jshint'],
+        files: ["Gruntfile", "app.js"],
+        tasks: ["jshint"],
       },
       css: {
-        files: ['public/*.css'],
-        tasks: ['csslint','cssmin'],
+        files: ["public/*.css"],
+        tasks: ["csslint","cssmin"],
       },
       html: {
-        files: ['public/*.html'],
-        tasks: ['htmllint', 'htmlmin'],
+        files: ["public/*.html"],
+        tasks: ["htmllint", "htmlmin"],
       },
     },
 

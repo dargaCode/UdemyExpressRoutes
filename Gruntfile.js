@@ -19,13 +19,11 @@ module.exports = function(grunt) {
     },
 
     htmllint: {
-      your_target: {
-        options: {
-          force: false,
-          "indent-width": 2
-        },
-        src: ["public/index.html"]
-      }
+      src: ["public/index.html"],
+      options: {
+        force: false,
+        "indent-width": 2
+      },
     },
 
     htmlmin: {

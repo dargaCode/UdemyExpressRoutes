@@ -1,5 +1,7 @@
 
 "use strict"; // so let will work
+/* jshint esversion: 6 */
+/* jshint node: true */
 
 // DEPENDENCIES
 
@@ -34,7 +36,7 @@ const ANIMALS = {
   Mouse: "Squeak!",
   Pig: "Oink!",
   Sheep: "BaAaAaAa!"
-}
+};
 
 // SERVER
 
@@ -75,7 +77,7 @@ String.prototype.capitalize = function() {
   const first = this[0].toUpperCase();
   const remainder  = this.slice(1).toLowerCase();
   return first + remainder;
-}
+};
 
 const repeatWord = (word, wordCount) => {
   let result = "";

@@ -9,7 +9,7 @@ const path = require("path");
 
 // PATHS
 
-app.use(express.static('public')); //serve static files
+app.use(express.static('public/build')); //serve static files
 
 // CONSTANTS
 

@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var cssmin = require('gulp-cssmin');
 var htmlmin = require('gulp-htmlmin');
 var rename = require('gulp-rename');
+var merge = require('merge-stream');
 
 // PATHS
 
@@ -30,6 +31,24 @@ gulp.task('htmlmin', function() {
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(PATHS.dest));
+});
+
+
+// alternate method using merge
+gulp.task('minify', function() {
+  var uglyCss = gulp.src(PATHS.css)
+    .pipe(cssmin());
+
+  var uglyHtml = gulp.src(PATHS.html)
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }));
+
+  return merge(uglyCss, uglyHtml)
     .pipe(rename({
       suffix: '.min'
     }))

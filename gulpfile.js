@@ -16,7 +16,7 @@ var PATHS = {
 
 // TASKS
 
-gulp.task('css', function() {
+gulp.task('cssmin', function() {
   return gulp.src(PATHS.css)
     .pipe(cssmin())
     .pipe(rename({
@@ -25,7 +25,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest(PATHS.dest));
 });
 
-gulp.task('html', function() {
+gulp.task('htmlmin', function() {
   return gulp.src(PATHS.html)
     .pipe(htmlmin({
       collapseWhitespace: true
@@ -37,8 +37,8 @@ gulp.task('html', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(PATHS.css, ['css']);
-  gulp.watch(PATHS.html, ['html']);
+  gulp.watch(PATHS.css, ['cssmin']);
+  gulp.watch(PATHS.html, ['htmlmin']);
 });
 
-gulp.task('default', ['css', 'html']);
+gulp.task('default', ['cssmin', 'htmlmin']);

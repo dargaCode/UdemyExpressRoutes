@@ -41,6 +41,4 @@ gulp.task('watch', function() {
   gulp.watch(PATHS.html, ['html']);
 });
 
-gulp.task('default', ['css', 'html'], function() {
-  console.log('DEFAULT TASK');
-});
+gulp.task('default', ['css', 'html']);

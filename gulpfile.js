@@ -2,6 +2,7 @@
 // DEPENDENCIES
 
 var gulp = require('gulp');
+var lazypipe = require('lazypipe');
 var cssmin = require('gulp-cssmin');
 var htmlmin = require('gulp-htmlmin');
 var rename = require('gulp-rename');
@@ -17,29 +18,29 @@ var PATHS = {
 
 // TASKS
 
-gulp.task('cssmin', function() {
+var saveRenamed = lazypipe()
+  .pipe(rename, {
+    suffix: '.min'
+  })
+  .pipe(gulp.dest, PATHS.dest);
+
+gulp.task('css', function() {
   return gulp.src(PATHS.css)
     .pipe(cssmin())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(PATHS.dest));
+    .pipe(saveRenamed());
 });
 
-gulp.task('htmlmin', function() {
+gulp.task('html', function() {
   return gulp.src(PATHS.html)
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(PATHS.dest));
+    .pipe(saveRenamed());
 });
 
 gulp.task('watch', function() {
-  gulp.watch(PATHS.css, ['cssmin']);
-  gulp.watch(PATHS.html, ['htmlmin']);
+  gulp.watch(PATHS.css, ['css']);
+  gulp.watch(PATHS.html, ['html']);
 });
 
-gulp.task('default', ['cssmin', 'htmlmin']);
+gulp.task('default', ['css', 'html']);

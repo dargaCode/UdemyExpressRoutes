@@ -37,24 +37,6 @@ gulp.task('htmlmin', function() {
     .pipe(gulp.dest(PATHS.dest));
 });
 
-
-// alternate method using merge
-gulp.task('minify', function() {
-  var uglyCss = gulp.src(PATHS.css)
-    .pipe(cssmin());
-
-  var uglyHtml = gulp.src(PATHS.html)
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }));
-
-  return merge(uglyCss, uglyHtml)
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(PATHS.dest));
-});
-
 gulp.task('watch', function() {
   gulp.watch(PATHS.css, ['cssmin']);
   gulp.watch(PATHS.html, ['htmlmin']);

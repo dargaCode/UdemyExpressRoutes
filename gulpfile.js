@@ -3,7 +3,9 @@
 
 var gulp = require('gulp');
 var lazypipe = require('lazypipe');
+var csslinter = require('gulp-csslint');
 var cssminify = require('gulp-cssmin');
+var htmllinter = require('gulp-htmlhint');
 var htmlminify = require('gulp-htmlmin');
 var jslinter = require('gulp-jshint');
 var jsdisplay = require('jshint-stylish');
@@ -31,12 +33,16 @@ var saveRenamed = lazypipe()
 
 gulp.task('css', function() {
   return gulp.src(PATHS.css)
+    .pipe(csslinter())
+    .pipe(csslinter.reporter())
     .pipe(cssminify())
     .pipe(saveRenamed());
 });
 
 gulp.task('html', function() {
   return gulp.src(PATHS.html)
+    .pipe(htmllinter())
+    .pipe(htmllinter.failReporter())
     .pipe(htmlminify({
       collapseWhitespace: true
     }))

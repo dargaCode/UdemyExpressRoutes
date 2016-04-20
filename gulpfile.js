@@ -3,8 +3,8 @@
 
 var gulp = require('gulp');
 var lazypipe = require('lazypipe');
-var cssmin = require('gulp-cssmin');
-var htmlmin = require('gulp-htmlmin');
+var cssminify = require('gulp-cssmin');
+var htmlminify = require('gulp-htmlmin');
 var jslinter = require('gulp-jshint');
 var jsdisplay = require('jshint-stylish');
 var rename = require('gulp-rename');
@@ -31,13 +31,13 @@ var saveRenamed = lazypipe()
 
 gulp.task('css', function() {
   return gulp.src(PATHS.css)
-    .pipe(cssmin())
+    .pipe(cssminify())
     .pipe(saveRenamed());
 });
 
 gulp.task('html', function() {
   return gulp.src(PATHS.html)
-    .pipe(htmlmin({
+    .pipe(htmlminify({
       collapseWhitespace: true
     }))
     .pipe(saveRenamed());

@@ -19,7 +19,7 @@ var PATHS = {
   html: ['public/*.html'],
   js: ['*.js'],
   dest: 'public/build'
-}
+};
 
 // FACTORIES
 

@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var lazypipe = require('lazypipe');
 var cssmin = require('gulp-cssmin');
 var htmlmin = require('gulp-htmlmin');
+var jslinter = require('gulp-jshint');
+var jsdisplay = require('jshint-stylish');
 var rename = require('gulp-rename');
 var merge = require('merge-stream');
 
@@ -38,9 +40,16 @@ gulp.task('html', function() {
     .pipe(saveRenamed());
 });
 
+gulp.task('js', function() {
+  return gulp.src(PATHS.js)
+    .pipe(jslinter())
+    .pipe(jslinter.reporter(jsdisplay));
+});
+
 gulp.task('watch', function() {
   gulp.watch(PATHS.css, ['css']);
   gulp.watch(PATHS.html, ['html']);
+  gulp.watch(PATHS.js, ['js']);
 });
 
-gulp.task('default', ['css', 'html']);
+gulp.task('default', ['css', 'html', 'js']);

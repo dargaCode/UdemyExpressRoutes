@@ -15,16 +15,19 @@ var merge = require('merge-stream');
 var PATHS = {
   css: ['public/*.css'],
   html: ['public/*.html'],
+  js: ['*.js'],
   dest: 'public/build'
 }
 
-// TASKS
+// FACTORIES
 
 var saveRenamed = lazypipe()
   .pipe(rename, {
     suffix: '.min'
   })
   .pipe(gulp.dest, PATHS.dest);
+
+// TASKS
 
 gulp.task('css', function() {
   return gulp.src(PATHS.css)

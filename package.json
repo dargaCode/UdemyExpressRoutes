@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dargaCode/UdemyExpressRoutesTest#readme",
   "dependencies": {
+    "ejs": "^2.4.1",
     "express": "^4.13.4"
   },
   "devDependencies": {

@@ -13,6 +13,11 @@ const path = require('path');
 
 app.use(express.static('public/build')); //serve static files
 
+// TEMPLATING
+
+app.set('view engine', 'ejs');
+
+
 // CONSTANTS
 
 const PORT_NUM = 3000;
@@ -53,9 +58,11 @@ app.get('/', function(request, response) {
 app.get('/speak/:animal', function(request, response) {
   const animal = request.params.animal.capitalize();
   const sound = ANIMALS[animal] || '???';
-  const result = `The ${animal} says, "${sound}"`;
 
-  response.send(result);
+  response.render('speak', {
+    animal: animal,
+    sound: sound
+  });
 });
 
 app.get('/repeat/:word/:num', function(request, response) {

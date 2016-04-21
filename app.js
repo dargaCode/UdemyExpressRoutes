@@ -69,9 +69,11 @@ app.get('/repeat/:word/:num', function(request, response) {
   const params = request.params;
   const word = params.word;
   const repeatNum = Number(params.num);
-  const result = repeatWord(word, repeatNum);
 
-  response.send(result);
+  response.render('repeat', {
+    word: word,
+    repeatNum: repeatNum
+  });
 });
 
 app.get('*', function(request, response) {
@@ -84,13 +86,4 @@ String.prototype.capitalize = function() {
   const first = this[0].toUpperCase();
   const remainder  = this.slice(1).toLowerCase();
   return first + remainder;
-};
-
-const repeatWord = (word, wordCount) => {
-  let result = '';
-  for (let i = 0; i < wordCount; i++) {
-    result += word + '  ';
-  }
-
-  return result;
 };

@@ -3,12 +3,12 @@
 body {
   font-family: sans-serif;
   box-sizing: border-box;
+  padding-top: 5%;
 }
 
 .container {
   max-width: 355px;
   margin: 0 auto;
-  padding-top: 5%;
 }
 
 h1 {
@@ -19,7 +19,7 @@ ul {
   padding-left: 16px;
 }
 
-li {
+li, a {
   font-size: 14px;
 }
 
@@ -39,4 +39,10 @@ span {
 
 .container ul ul li {
   margin-top: 5px;
+}
+
+/*FOOTER*/
+
+.footer {
+  text-align: center;
 }

@@ -10,7 +10,6 @@ var htmlminify = require('gulp-htmlmin');
 var jslinter = require('gulp-jshint');
 var jsdisplay = require('jshint-stylish');
 var rename = require('gulp-rename');
-var merge = require('merge-stream');
 
 // PATHS
 

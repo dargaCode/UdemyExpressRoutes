@@ -17,7 +17,6 @@ app.use(express.static('public/build')); //serve static files
 
 app.set('view engine', 'ejs');
 
-
 // CONSTANTS
 
 const PORT_NUM = 3000;

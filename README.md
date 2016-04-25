@@ -7,6 +7,13 @@ Create a server via Express and listening for GET requests at a few routes. Use 
 
 This is also my first project deployed to Heroku. 
 
+# Update: 
+
+As I continue learning about server-side development, I’ve gone back and added HTML templates to this project (via <a href="http://www.embeddedjs.com/">EJS</a>).
+
+I also created a build system in <a href="http://gulpjs.com/">Gulp</a>. For such a small project it was more trouble than it was worth, but I can see this sort of thing will be extremely useful down the road. 
+
+
 <a href="https://darga-express-routes-test.herokuapp.com/"><b>Live Webpage</b></a>
 
 <img src ="http://40.media.tumblr.com/34ba2de83e0b7fcccb209c28f054bccb/tumblr_inline_o5fwv0L7XR1tvc5hi_1280.png" width=“300" height="300">

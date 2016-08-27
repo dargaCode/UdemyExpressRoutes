@@ -16,4 +16,4 @@ I also created a build system in <a href="http://gulpjs.com/">Gulp</a>. For such
 
 <a href="https://darga-express-routes.herokuapp.com/"><b>Live Webpage</b></a>
 
-<img src ="http://66.media.tumblr.com/440fa8ae57790690b01fcf08b89a8a67/tumblr_inline_oaj57fbNPR1tvc5hi_1280.png" width=“300" height="300">
+<img src ="http://66.media.tumblr.com/440fa8ae57790690b01fcf08b89a8a67/tumblr_inline_oaj57fbNPR1tvc5hi_1280.png" width="550">
